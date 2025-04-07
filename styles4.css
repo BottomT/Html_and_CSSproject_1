@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #4B504C; */
+    
+    /* background-color: rgb(68, 68, 68); */
+}
+
+body{
+   
+    font-family: sans-serif;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    padding-left: 3%; 
+    padding-right: 3%;   /* using padding for inner spacing */
+    background-color: #4b504c;
+
+    
+}
+
+
+header > img{
+    height: auto;
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 1% 3rem 1%;
+    margin: 0;
+    transition: 0.5s;
+}
+
+nav ul li{
+    margin: 0 2rem;
+    
+}
+
+nav a{
+    position: relative;
+    text-decoration: none;
+    color: rgb(208, 96, 76);
+    border-bottom: 3px solid transparent;
+    font-size: medium;
+    font-weight: 600;
+    padding: 0.2rem 0;
+    display: block;
+    transition: 0.5s;
+}
+
+/* hover effect on nav buttons ---------*/
+
+nav ul:hover li a{
+    transform: scale(1.5);
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+nav ul li a:hover{
+    transform: scale(1.8);
+    opacity: 1;
+    filter: blur(0);
+    color: #2e2e2e;
+}
+
+nav ul li a::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ed8a79;
+    transition: 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+    z-index: -1;
+}
+
+nav ul li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* 
+nav a:hover{
+    color: rgb(237, 138, 121);
+    border: 3px solid #ed8a79;
+    width: fit-content;
+    transition: all 0.1s ease-in;
+} */
+
+section{
+    display: flex;
+    gap: 5rem;         /* gap is used to add space between flex or grid items — without using margins manually! */
+    
+}
+
+#hero_image img{
+    width: 100vw;
+    position: relative;
+    left: -3%;
+    
+}
+
+#hero_image img{
+    margin-left: 3%;
+    margin-right: 3% ;
+    width: 100%;
+    border-radius: 2%;
+}
+
+/* #hero_image img{
+    padding: 0;
+    width: 100%;
+    height: auto;
+} */
+
+
+article{
+    margin-top: 4rem;
+    padding-left: 10px;
+    padding-top: 2rem;
+    flex: 1;
+    background-color: #D0604C; 
+    color: #2e2e2e;
+    border-radius: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 20px,
+            rgba(0, 0, 0, 0.15) 0px 16px 16px;
+
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+} 
+article h2{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+article p{
+    padding-top: 1rem;
+    overflow: hidden;
+}
+
+article > .image{
+    height: 250px;
+    width: 100%;
+    background-color: #fdfdfd;
+    border-radius: 1%;
+    margin-bottom: 10px;
+}
+
+article > .image img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1%;
+    object-fit: cover;
+    object-position: 20% 30%;
+
+}
+
+.image.three img{
+    object-position: center;
+}
+
+article:hover{
+    transform: translateY(-10px) scale(1.04);
+    box-shadow:  3px 30px 35px rgba(0, 0, 0, 0.6),   
+                 0px 4px 8px #fffefead;
+    z-index: 2;
+}
+
+/* 
+article button{
+    padding: 20px;
+    margin-top: 1.2rem;
+    font-size: medium;
+    background: #2e2e2e;
+    color: whitesmoke;
+    border: 0.25rem solid #2e2e2e;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.35s;
+}
+
+button:hover{
+    color: #2e2e2e;
+}
+button::after{
+    content: "";
+    background-color: whitesmoke;              // This effect didn't work...
+    position: relative;
+    z-index: -1;
+    padding: 20px;
+    display: block;
+}
+button.btn::after{
+    left: 0;
+    right: 0;
+    top: 100%;
+    transition: all 0.35s;
+}
+button.btn::after{
+    top: 0;
+    bottom: 0;
+} */
+
+
+article button {
+    padding: 20px;
+    margin-top: 1.2rem;
+    font-size: medium;
+    background: #2e2e2e;
+    color: whitesmoke;
+    border: 3px solid #2e2e2e;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.35s;
+    font-weight: 500;
+
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    z-index: -1;
+    transition: top 0.35s ease;
+}
+
+button:hover::after {
+    top: 0;
+}
+
+button:hover {
+    color: #2e2e2e;
+    font-weight: 600;
+
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 3%;
+    color: whitesmoke;
+    margin: 3rem;
+    border-top: 2px solid whitesmoke;
+}
+
+footer div{
+    flex: 1;
+}
+
+footer img{
+    max-width:  80px;
+    height: auto;
+}
+
+.footer_list{
+    display: flex;
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    color: whitesmoke;
+}
