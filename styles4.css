@@ -28,6 +28,15 @@ header > img{
     margin-right: auto;
 }
 
+header .LOGO_Image2{
+    max-width: 50%;
+}
+
+header .LOGO_Image1{
+    max-width: 10%;
+    margin: 0 auto 1rem auto;
+}
+
 nav ul{
     list-style: none;
     display: flex;
